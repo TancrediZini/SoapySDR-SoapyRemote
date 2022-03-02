@@ -197,4 +197,4 @@ Connecting to DNS-SD daemon...
 Why CubucSDR?
 It was a software I have alredy seen in some video tutorials about SDR modules and it was easy to find and select the SDR module over the Network, as shown in the image below:
 
-![Alt text](/CubicSDR_Local_Net_module.jpg "CubicSDR module selection")
+![Alt text](Images/CubicSDR_Local_Net_module.jpg "CubicSDR module selection")
