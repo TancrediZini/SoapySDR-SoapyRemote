@@ -23,9 +23,9 @@ Utilizing SoapySDR and it's remote support to pilot from a client an SDR install
 
 ```
 
-## SoapySDR and SoapyRemoteSDR installation
+## SoapySDR installation
 
-To install SoapySDR on the server i followed the build guide on the GitHub [wiki](https://github.com/pothosware/SoapySDR/wiki/BuildGuide).
+To install SoapySDR on the server and on the client I followed the [Build Guide](https://github.com/pothosware/SoapySDR/wiki/BuildGuide) on the GitHub.
 
 ### This is the output of the `SoapySDRUtil --info` command on the server
 
@@ -118,10 +118,10 @@ Available converters...
 
 Confronting the two outputs there are some differences that stand out.
 
-The first three lines, in which the `Lib', 'API' and 'ABI' version are identified, show that on the two machines there are two different versions installed.
-also the seventh line has a '(missing)' lable on the client, while it doesn' on the server.
+*The first three lines, in which the `Lib', 'API' and 'ABI' version are identified, show that on the two machines there are two different versions installed.
+also the seventh line has a '(missing)' label on the client, while it doesn' on the server.
 This may be because fo the soapy remote module installed on the client or due to my inexperience with the linux shell while i was trying to install the modules.
-I tired to inspect the command history but I couldn't find nothing different aside the remote module installation, this isn't enough to let me affirm that's the case.
+I tried to inspect the command history but I couldn't find nothing different aside the remote module installation, this isn't enough to let me affirm that's the case.*
 
 The three lines:
 
@@ -145,7 +145,7 @@ ABI Version: v0.7
 
 ```
 
-The line with the '(missing)' lable:
+The line with the '(missing)' label:
 
 - server
 
@@ -162,3 +162,8 @@ Search path:  /usr/local/lib/SoapySDR/modules0.8
 Search path:  /usr/local/lib/SoapySDR/modules0.7                                 (missing)
 
 ```
+
+## SoapyRemote installation
+
+To install SoapyRemote on the server I followed the building instruction on the [Remote support for Soapy SDR](https://github.com/pothosware/SoapyRemote/wiki) page on GitHub.
+
