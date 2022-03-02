@@ -170,7 +170,7 @@ To install SoapyRemote on the server I followed the building instruction on the 
 ### Soapy server initialization
 
 To start the Soapy Server and utilize the SDR module remotely it is sufficient to run the `SoapySDRServer --bind` command in the shell environment.
-One thing I wasn't able(yet) to understand how to correct is an error on the avahi connection, which is visible in the output of the server launch command:
+An error I wasn't able(yet) to understand how to correct is about avahi. It is visible in the output of the server launch command:
 
 ```text
 
@@ -191,3 +191,10 @@ Connecting to DNS-SD daemon...
 [ERROR] avahi_entry_group_new() failed
 
 ```
+
+## Using CubicSDR with the Local Net Device
+
+Why CubucSDR?
+It was a software I have alredy seen in some video tutorials about SDR modules and it was easy to find and select the SDR module over the Network, as shown in the image below:
+
+![Alt text](/CubicSDR_Local_Net_module.jpg "CubicSDR module selection")
