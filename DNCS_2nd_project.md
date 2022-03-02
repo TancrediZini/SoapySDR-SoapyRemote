@@ -29,7 +29,7 @@ To install SoapySDR on the server and on the client I followed the [Build Guide]
 
 ### This is the output of the `SoapySDRUtil --info` command on the server
 
-```shell
+```PowerShell
 
 ######################################################
 ##     Soapy SDR -- the SDR abstraction library     ##
@@ -74,7 +74,7 @@ Available converters...
 
 ### This is the output of the `SoapySDRUtil --info` command on the client
 
-```shell
+```PowerShell
 
 ######################################################
 ##     Soapy SDR -- the SDR abstraction library     ##
@@ -120,14 +120,14 @@ Confronting the two outputs there are some differences that stand out.
 
 *The first three lines, in which the `Lib', 'API' and 'ABI' version are identified, show that on the two machines there are two different versions installed.
 also the seventh line has a '(missing)' label on the client, while it doesn' on the server.
-This may be because fo the soapy remote module installed on the client or due to my inexperience with the linux shell while i was trying to install the modules.
+This may be because fo the soapy remote module installed on the client or due to my inexperience with the linux PowerShell while i was trying to install the modules.
 I tried to inspect the command history but I couldn't find nothing different aside the remote module installation, this isn't enough to let me affirm that's the case.*
 
 The three lines:
 
 - server
 
-```shell
+```PowerShell
 
 Lib Version: v0.8.1-2
 API Version: v0.8.0
@@ -137,7 +137,7 @@ ABI Version: v0.8
 
 - client
 
-```shell
+```PowerShell
 
 Lib Version: v0.7.2-1
 API Version: v0.7.1
@@ -149,7 +149,7 @@ The line with the '(missing)' label:
 
 - server
 
-```shell
+```PowerShell
 
 Search path:  /usr/local/lib/SoapySDR/modules0.8
 
@@ -157,7 +157,7 @@ Search path:  /usr/local/lib/SoapySDR/modules0.8
 
 - client
 
-```shell
+```PowerShell
 
 Search path:  /usr/local/lib/SoapySDR/modules0.7                                 (missing)
 
