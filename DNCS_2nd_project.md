@@ -166,3 +166,28 @@ Search path:  /usr/local/lib/SoapySDR/modules0.7                                
 ## SoapyRemote installation
 
 To install SoapyRemote on the server I followed the building instruction on the [Remote support for Soapy SDR](https://github.com/pothosware/SoapyRemote/wiki) page on GitHub.
+
+### Soapy server initialization
+
+To start the Soapy Server and utilize the SDR module remotely it is sufficient to run the `SoapySDRServer --bind` command in the shell environment.
+One thing I wasn't able(yet) to understand how to correct is an error on the avahi connection, which is visible in the output of the server launch command:
+
+```text
+
+######################################################
+## Soapy Server -- Use any Soapy SDR remotely
+######################################################
+
+Server version: 0.6.0-gc09b2f10
+Server UUID: cf57863e-a583-16d8-8567-7e70007f0101
+Launching the server... tcp://[::]:55132
+Server bound to [::]:55132
+Launching discovery server... 
+Connecting to DNS-SD daemon... 
+[INFO] Avahi version:  (null)
+[INFO] Avahi hostname: (null)
+[INFO] Avahi domain:   (null)
+[INFO] Avahi FQDN:     (null)
+[ERROR] avahi_entry_group_new() failed
+
+```
