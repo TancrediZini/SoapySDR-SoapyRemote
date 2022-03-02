@@ -25,9 +25,10 @@ Utilizing SoapySDR and it's remote support to pilot from a client an SDR install
 
 ## SoapySDR and SoapyRemoteSDR installation
 
-To install SoapySDR on both the client and the server i followed the build guide on the GitHub [wiki](https://github.com/pothosware/SoapySDR/wiki/BuildGuide).
+To install SoapySDR on the server i followed the build guide on the GitHub [wiki](https://github.com/pothosware/SoapySDR/wiki/BuildGuide).
 
-This is the output of the `SoapySDRUtil --info` command on the server:
+
+### This is the output of the `SoapySDRUtil --info` command on the server
 
 ```shell
 
@@ -72,7 +73,7 @@ Available converters...
 
 ```
 
-This is the output of the `SoapySDRUtil --info` command on the client:
+### This is the output of the `SoapySDRUtil --info` command on the client
 
 ```shell
 
