@@ -126,35 +126,39 @@ I tired to inspect the command history but I couldn't find nothing different asi
 The three lines:
 
 - server
-'''shell
+
+```shell
 
 Lib Version: v0.8.1-2
 API Version: v0.8.0
 ABI Version: v0.8
 
-'''
+```
 
 - client
-'''shell
+
+```shell
 
 Lib Version: v0.7.2-1
 API Version: v0.7.1
 ABI Version: v0.7
 
-'''
+```
 
 The line with the '(missing)' lable:
 
 - server
-'''shell
+
+```shell
 
 Search path:  /usr/local/lib/SoapySDR/modules0.8
 
-'''
+```
 
 - client
-'''shell
+
+```shell
 
 Search path:  /usr/local/lib/SoapySDR/modules0.7                                 (missing)
 
-'''
+```
