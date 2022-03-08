@@ -28,6 +28,11 @@ Utilizing SoapySDR and it's remote support to pilot from a client an SDR install
 The client runs on a notebook with a `Linux Mint 20.3 Cinnamon` system, the server runs on a RaspberryPi with `Kali 2022.1` installed and both of them are connected to the network via WiFi.
 The SDR device is produced by [nooelec](https://www.nooelec.com/store/) and is installed on the server.
 
+#### ipv4 addresses
+
+Client: `192.168.1.164`
+Server: `192.168.1.133`
+
 #### Installing the SDR module
 
 For this project I am using a NooElec NESDR SMArtee v2.
@@ -198,4 +203,6 @@ Disabled direct sampling mode
 
 ## tcpdump
 
-To monitor the information flow between server and client I used [tcpdump](https://www.tcpdump.org/index.html)
+To monitor the information flow between server and client I used [tcpdump](https://www.tcpdump.org/index.html).
+I ran the command in the shell to listen to the isolated packets going to, or coming from, my desidered address.
+
