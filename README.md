@@ -65,7 +65,7 @@ I followed the [wiki] to install this plugin module to interface the RTL-SDR wit
 
 ## SoapyRemote installation
 
-To install SoapyRemote on the server I followed the building instruction on the [Remote support for Soapy SDR](https://github.com/pothosware/SoapyRemote/wiki?target=_blank) page on GitHub.
+To install SoapyRemote on the server I followed the building instruction on the [Remote support for Soapy SDR](https://github.com/pothosware/SoapyRemote/wiki) <a href="https://github.com/pothosware/SoapyRemote" target="_blank"> Soapy Wiki </a> page on GitHub.
 
 ### This is the output of the `SoapySDRUtil --info` command on the server
 
