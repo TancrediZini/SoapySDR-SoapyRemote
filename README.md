@@ -30,7 +30,7 @@ The SDR device is produced by [nooelec](https://www.nooelec.com/store/) and is i
 
 #### ipv4 addresses
 
-Client: `192.168.1.164`
+Client: `192.168.1.164`  
 Server: `192.168.1.133`
 
 #### Installing the SDR module
@@ -205,4 +205,3 @@ Disabled direct sampling mode
 
 To monitor the information flow between server and client I used [tcpdump](https://www.tcpdump.org/index.html).
 I ran the command in the shell to listen to the isolated packets going to, or coming from, my desidered address.
-
