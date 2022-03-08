@@ -65,7 +65,7 @@ I followed the [wiki] to install this plugin module to interface the RTL-SDR wit
 
 ## SoapyRemote installation
 
-To install SoapyRemote on the server I followed the building instruction on the [Remote support for Soapy SDR](https://github.com/pothosware/SoapyRemote/wiki) page on GitHub.
+To install SoapyRemote on the server I followed the building instruction on the [Remote support for Soapy SDR](https://github.com/pothosware/SoapyRemote/wiki?target=_blank) page on GitHub.
 
 ### This is the output of the `SoapySDRUtil --info` command on the server
 
@@ -205,3 +205,7 @@ Disabled direct sampling mode
 
 To monitor the information flow between server and client I used [tcpdump](https://www.tcpdump.org/index.html).
 I ran the command in the shell to listen to the isolated packets going to, or coming from, my desidered address.
+
+### listening server side
+
+Using the command `tcpdump src 192.168.1.164 -cX` we can read in output X packets coming from the Client
