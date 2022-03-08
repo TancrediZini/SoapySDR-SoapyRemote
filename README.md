@@ -23,7 +23,12 @@ Utilizing SoapySDR and it's remote support to pilot from a client an SDR install
 
 ```
 
-## Installing the SDR module
+### Setup
+
+The client runs on a notebook with a `Linux Mint 20.3 Cinnamon` system, the server runs on a RaspberryPi with `Kali 2022.1` installed and both of them are connected to the network via WiFi.
+The SDR device is produced by [nooelec](https://www.nooelec.com/store/) and is installed on the server.
+
+#### Installing the SDR module
 
 For this project I am using a NooElec NESDR SMArtee v2.
 Using the `lsusb` command we can see that the OS has recognized the device and had loaded what it believes to be be the correct driver, listing the device as `Realtek Semiconductor Corp. RTL2838 DVB-T`.
@@ -43,6 +48,8 @@ The next step is "blacklisting" the defaults drivers, done by adding the line `b
 
 Finally we can install the rtl-sdr package with the `sudo apt-get install rtl-sdr` command. The device can be tested by calling the `rtl_test` command in the terminal.
 
+This process is valid on Linux based systems, Windows based systems need to follow [this guide](https://support.nooelec.com/hc/en-us/articles/360005298053-NESDR-Installation-Guide).
+
 ## SoapySDR installation
 
 To install SoapySDR on the server and on the client I followed the [Build Guide](https://github.com/pothosware/SoapySDR/wiki/BuildGuide) on the GitHub.
@@ -54,55 +61,6 @@ I followed the [wiki] to install this plugin module to interface the RTL-SDR wit
 ## SoapyRemote installation
 
 To install SoapyRemote on the server I followed the building instruction on the [Remote support for Soapy SDR](https://github.com/pothosware/SoapyRemote/wiki) page on GitHub.
-
-## Differences between server and client
-
-Confronting the two outputs there are some differences that stand out.
-
-*The first three lines, in which the `Lib', 'API' and 'ABI' version are identified, show that on the two machines there are two different versions installed.
-also the seventh line has a '(missing)' label on the client, while it doesn' on the server.
-This may be because fo the soapy remote module installed on the client or due to my inexperience with the linux text while i was trying to install the modules.
-I tried to inspect the command history but I couldn't find nothing different aside the remote module installation, this isn't enough to let me affirm that's the case.*
-
-The three lines:
-
-- server
-
-```text
-
-Lib Version: v0.8.1-2
-API Version: v0.8.0
-ABI Version: v0.8
-
-```
-
-- client
-
-```text
-
-Lib Version: v0.7.2-1
-API Version: v0.7.1
-ABI Version: v0.7
-
-```
-
-The line with the '(missing)' label:
-
-- server
-
-```text
-
-Search path:  /usr/local/lib/SoapySDR/modules0.8
-
-```
-
-- client
-
-```text
-
-Search path:  /usr/local/lib/SoapySDR/modules0.7                                 (missing)
-
-```
 
 ### This is the output of the `SoapySDRUtil --info` command on the server
 
@@ -167,10 +125,11 @@ Available converters...
 
 ```
 
+As we can see, the only difference is the remote module, which was only installed on the server.
+
 ### Soapy server initialization
 
 To start the Soapy Server and utilize the SDR module remotely it is sufficient to run the `SoapySDRServer --bind` command in the shell environment.
-An error I wasn't able(yet) to understand how to correct is about avahi. It is visible in the output of the server launch command:
 
 ```text
 
@@ -192,10 +151,14 @@ Connecting to DNS-SD daemon...
 
 ```
 
+I was worried about `[ERROR] avahi_entry_group_new() failed`.
+I serched many ways to resolve the issue, even if it didn't affect the server-client communication in a detectable(from me, at least...) way, but I couldn't find a solution to it.
+I tried to install the `SoapyRemote` on a `Raspian` system and that error never showed up while binding the server, so I suppose it stems from my lack of knowledge about Linux based systems.
+
 ## Using CubicSDR with the Local Net Device
 
 Why CubucSDR?
-It was a software I have alredy seen in some video tutorials about SDR modules and it was easy to find and select the SDR module over the Network, as shown in the image below:
+It was a software I had alredy seen used in some video tutorials about SDR modules and it was easy to find and select the SDR module over the Network, as shown in the image below:
 
 ![Alt text](Images/CubicSDR_Local_Net_module.jpg "CubicSDR module selection")
 
@@ -232,3 +195,7 @@ Allocating 15 zero-copy buffers
 Disabled direct sampling mode
 
 ```
+
+## tcpdump
+
+To monitor the information flow between server and client I used [tcpdump](https://www.tcpdump.org/index.html)
