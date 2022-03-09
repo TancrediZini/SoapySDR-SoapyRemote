@@ -62,7 +62,7 @@ To install SoapySDR on the server and on the client I followed the [Build Guide]
 
 ## SoapyRTLSDR installation
 
-I followed the [wiki] to install this plugin module to interface the RTL-SDR with the SoapySDR API, both on the server and the client.
+I followed the [wiki](https://github.com/pothosware/SoapyRTLSDR/wiki) to install this plugin module to interface the RTL-SDR with the SoapySDR API, both on the server and the client.
 
 ## SoapyRemote installation
 
