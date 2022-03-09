@@ -335,6 +335,28 @@ I used [nload](https://github.com/rolandriegel/nload), though I installed it via
 
 ![Alt text](Images/bandwith_analysis.jpg "nload_screenshot")
 
+I transcribed the data, since it isn't much readable in the screenshot:
+
+```text
+Incoming:
+
+Curr: 41.27 MBit/s
+Avg: 40.82 MBit/s
+Min: 22.63 MBit/s
+Max: 45.27 MBit/s
+Ttl: 397.99 GByte
+
+
+Outgoing:
+
+Curr: 245.70 KBit/s
+Avg: 218.27 KBit/s
+Min: 125.88 KBit/s
+Max: 376.79 KBit/s
+Ttl: 1.89 GByte
+
+```
+
 ## Experience
 
 I had problems during the setup due to my inexperience with the Github environment and Linux based systems, which I began to use in the previous DNCS project.  
