@@ -162,7 +162,7 @@ I tried to install the `SoapyRemote` on a `Raspian` system and that error never 
 
 ## Using CubicSDR with the Local Net Device
 
-Why CubucSDR?
+Why CubicSDR?
 It was a software I had alredy seen used in some video tutorials about SDR modules and it was easy to find and select the SDR module over the Network, as shown in the image below:
 
 ![Alt text](Images/CubicSDR_Local_Net_module.jpg "CubicSDR_module_selection")
@@ -258,7 +258,7 @@ No.     Time           Source                Destination     Protocol Length Inf
 ```
 
 As expected the communication is on the UDP protocol, as it is also stated in the `SoapyRemote` wiki page: `By default SoapyRemote streams are based around udp to preference throughput over reliability`.
-I haven't figured out what the TCP PUSH ACK package was accomplishing since I haven't found a way to confirm eventual speculations.
+I speculate that the frame No. 130, which is on the TCP protocol, belong to the vnc connection I am susing to control the RaspberryPi from the laptop.
 
 ### Details from a captured packet
 
@@ -326,4 +326,10 @@ Data (1452 bytes)
 
 ![Alt text](Images/cattura_progetto_io_graph.jpg "I/O_Graph_UDP")
 
-## Experience
+## nload
+
+I used [nload](https://github.com/rolandriegel/nload), though I installed it via `apt install nload`, to get another look at the occupied bandwith.
+
+### nload monitor screenshot
+
+![Alt text](Images/bandwith_analysis.jpg "nload_screenshot")
