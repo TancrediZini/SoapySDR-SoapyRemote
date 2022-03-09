@@ -203,7 +203,9 @@ Disabled direct sampling mode
 
 ## Wireshark
 
-I used [Wireshark](https://www.wireshark.org/) to capture the packets exchanged between client and server, here is an extract of the packets listened to
+I used [Wireshark](https://www.wireshark.org/) to capture the packets exchanged between client and server.
+
+### Here is an extract of the packets listened to
 
 ```text
 
@@ -253,7 +255,7 @@ No.     Time           Source                Destination     Protocol Length Inf
 
 ```
 
-Here are the details from a captured packet:
+### Here are the details from a captured packet
 
 ```text
 
