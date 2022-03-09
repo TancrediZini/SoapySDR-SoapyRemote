@@ -357,7 +357,7 @@ Ttl: 1.89 GByte
 
 ```
 
-Consider that this data is on the whole interface and is not filtered.  
+Consider that this data is on the whole interface and is not filtered on the client-server connection.  
 It was a mean to cross control the Wireshark analysis.
 
 ## Experience
