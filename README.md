@@ -2,7 +2,7 @@
 
 ## Assignment
 
-Use SoapySDR and it's remote support to pilot from a client an SDR dongle installed on a server.
+Use SoapySDR and it's remote support to pilot from a client an SDR module installed on a server.  
 Analyze the bandwith used by the connection and its performance.
 
 ```text
@@ -26,7 +26,7 @@ Analyze the bandwith used by the connection and its performance.
 
 ### Setup
 
-The client runs on a notebook with a `Linux Mint 20.3 Cinnamon` system, the server runs on a RaspberryPi with `Kali 2022.1` installed and both of them are connected to the network via WiFi.
+The client runs on a notebook with a `Linux Mint 20.3 Cinnamon` system, the server runs on a RaspberryPi with `Kali 2022.1` installed and both of them are connected to the network via WiFi.  
 The SDR device is produced by [nooelec](https://www.nooelec.com/store/) and is installed on the server.
 
 #### ipv4 addresses
@@ -36,7 +36,7 @@ Server: `192.168.1.133`
 
 #### Installing the SDR module
 
-For this project I am using a NooElec NESDR SMArtee v2.
+For this project I am using a NooElec NESDR SMArtee v2.  
 Using the `lsusb` command we can see that the OS has recognized the device and had loaded what it believes to be be the correct driver, listing the device as `Realtek Semiconductor Corp. RTL2838 DVB-T`.
 
 ```text
@@ -157,13 +157,13 @@ Connecting to DNS-SD daemon...
 
 ```
 
-I was worried about `[ERROR] avahi_entry_group_new() failed`.
-I serched many ways to resolve the issue, even if it didn't affect the server-client communication in a detectable(from me, at least...) way, but I couldn't find a solution to it.
+I was worried about `[ERROR] avahi_entry_group_new() failed`.  
+I serched many ways to resolve the issue, even if it didn't affect the server-client communication in a detectable(from me, at least...) way, but I couldn't find a solution to it.  
 I tried to install the `SoapyRemote` on a `Raspian` system and that error never showed up while binding the server, so I suppose it stems from my lack of knowledge about Linux based systems.
 
 ## Using CubicSDR with the Local Net Device
 
-Why CubicSDR?
+Why CubicSDR?  
 It was a software I had alredy seen used in some video tutorials about SDR modules and it was easy to find and select the SDR module over the Network, as shown in the image below:
 
 ![Alt text](Images/CubicSDR_Local_Net_module.jpg "CubicSDR_module_selection")
@@ -258,7 +258,7 @@ No.     Time           Source                Destination     Protocol Length Inf
 
 ```
 
-As expected the communication is on the UDP protocol, as it is also stated in the `SoapyRemote` wiki page: `By default SoapyRemote streams are based around udp to preference throughput over reliability`.
+As expected the communication is on the UDP protocol, as it is also stated in the `SoapyRemote` wiki page: `By default SoapyRemote streams are based around udp to preference throughput over reliability`.  
 I speculate that the frame No. 130, which is on the TCP protocol, belong to the vnc connection I am susing to control the RaspberryPi from the laptop.
 
 ### Details from a captured packet
@@ -364,5 +364,5 @@ It was a mean to cross control the Wireshark analysis.
 
 I had problems during the setup due to my inexperience with the Github environment and Linux based systems, which I began to use in the previous DNCS project.  
 There a couple of things I would have liked to solve, like the `[ERROR] avahi_entry_group_new() failed` or problems with dongle's antenna that never gave me a clear signal(I couldn't place it outside and there was probably too much noise in my apartment), no matter how or in which room I placed it.  
-I also got to experience Markdown a bit, and the fact that I haven't found a way to make the links open automatically in a new tab anoys me a bit...
+I also got to experience Markdown a bit, and the fact that I haven't found a way to make the links open automatically in a new tab anoys me a bit...  
 I hope to have done a sufficient job, but I suspect that there could have been more things I could have looked at.
