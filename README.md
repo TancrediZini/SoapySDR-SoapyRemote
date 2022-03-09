@@ -2,7 +2,8 @@
 
 ## Assignment
 
-Utilizing SoapySDR and it's remote support to pilot from a client an SDR installed on a server.
+Use SoapySDR and it's remote support to pilot from a client an SDR installed on a server.
+Analyze the bandwith used by the connection and its performance.
 
 ```text
 
@@ -333,3 +334,10 @@ I used [nload](https://github.com/rolandriegel/nload), though I installed it via
 ### nload monitor screenshot
 
 ![Alt text](Images/bandwith_analysis.jpg "nload_screenshot")
+
+## Experience
+
+I had problems during the setup due to my inexperience with the Github environment and Linux based systems, which I began to use in the previous DNCS project.  
+There a couple of things I would have liked to solve, like the `[ERROR] avahi_entry_group_new() failed` or problems with dongle's antenna that never gave me a clear signal(I couldn't place it outside and there was probably too much noise in my apartment), no matter how or in which room I placed it.  
+I also got to experience Markdown a bit, and the fact that I haven't found a way to make the links open automatically in a new tab anoys me a bit...
+I hope to have done a sufficient job, but I suspect that there could have been more things I could have looked at.
