@@ -65,7 +65,7 @@ I followed the [wiki] to install this plugin module to interface the RTL-SDR wit
 
 ## SoapyRemote installation
 
-To install SoapyRemote on the server I followed the building instruction on the [Remote support for Soapy SDR](https://github.com/pothosware/SoapyRemote/wiki) <a href="https://github.com/pothosware/SoapyRemote" target="_blank"> Soapy Wiki </a> page on GitHub.
+To install SoapyRemote on the server I followed the building instruction on the [Remote support for Soapy SDR](https://github.com/pothosware/SoapyRemote/wiki) page on GitHub.
 
 ### This is the output of the `SoapySDRUtil --info` command on the server
 
@@ -201,11 +201,54 @@ Disabled direct sampling mode
 
 ```
 
-## tcpdump
+## Wireshark
 
-To monitor the information flow between server and client I used [tcpdump](https://www.tcpdump.org/index.html).
-I ran the command in the shell to listen to the isolated packets going to, or coming from, my desidered address.
+I used [Wireshark](https://www.wireshark.org/) to capture the packets exchanged between client and server, here is an extract of the packets listened to
 
-### listening server side
+```text
 
-Using the command `tcpdump src 192.168.1.164 -cX` we can read in output X packets coming from the Client
+No.     Time           Source                Destination           Protocol Length Info
+
+125 0.039227602    192.168.1.164         192.168.1.133         UDP      68     37604 → 58586 Len=24
+126 0.039555088    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+127 0.039555153    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+128 0.039555181    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+129 0.040016214    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+130 0.040016282    192.168.1.133         192.168.1.164         TCP      99     55132 → 37920 [PSH, ACK] Seq=1 Ack=1 Win=32
+    Len=31 TSval=246854745 TSecr=1515470716
+131 0.040383079    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+132 0.040748704    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+133 0.040748771    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+134 0.041135746    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+135 0.041135814    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+136 0.041135842    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+137 0.041135871    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+138 0.041453176    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+139 0.042176577    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+140 0.042176642    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+141 0.042516079    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+142 0.042516119    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+143 0.042574703    192.168.1.164         192.168.1.133         UDP      68     37604 → 58586 Len=24
+144 0.043087202    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+145 0.043087281    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+146 0.043455987    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+147 0.043456056    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+148 0.043774248    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+149 0.044463176    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+150 0.044463242    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+151 0.044824321    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+152 0.044824386    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+153 0.044824416    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+154 0.044824445    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+155 0.045347785    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+156 0.048898163    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+157 0.050110120    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+158 0.050110186    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+159 0.050110215    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+160 0.051853949    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+161 0.051854007    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+162 0.051854036    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+163 0.051854064    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+164 0.051854092    192.168.1.133         192.168.1.164         UDP      1496   58586 → 37604 Len=1452
+
+```
