@@ -165,7 +165,7 @@ I tried to install the `SoapyRemote` on a `Raspian` system and that error never 
 Why CubucSDR?
 It was a software I had alredy seen used in some video tutorials about SDR modules and it was easy to find and select the SDR module over the Network, as shown in the image below:
 
-![Alt text](Images/CubicSDR_Local_Net_module.jpg "CubicSDR module selection")
+![Alt text](Images/CubicSDR_Local_Net_module.jpg "CubicSDR_module_selection")
 
 Opening CubicSDR and selecting the Local Net module triggers an output from the server:
 
@@ -205,12 +205,13 @@ Disabled direct sampling mode
 
 I used [Wireshark](https://www.wireshark.org/) to capture the packets exchanged between client and server.
 
-### Here is an extract of the packets listened to
+### An extract of the captured frames
 
 ```text
 
 No.     Time           Source                Destination     Protocol Length Info
 
+...
 125     0.039227602    192.168.1.164         192.168.1.133   UDP      68     37604 → 58586 Len=24
 126     0.039555088    192.168.1.133         192.168.1.164   UDP      1496   58586 → 37604 Len=1452
 127     0.039555153    192.168.1.133         192.168.1.164   UDP      1496   58586 → 37604 Len=1452
@@ -252,10 +253,14 @@ No.     Time           Source                Destination     Protocol Length Inf
 162     0.051854036    192.168.1.133         192.168.1.164   UDP      1496   58586 → 37604 Len=1452
 163     0.051854064    192.168.1.133         192.168.1.164   UDP      1496   58586 → 37604 Len=1452
 164     0.051854092    192.168.1.133         192.168.1.164   UDP      1496   58586 → 37604 Len=1452
+...
 
 ```
 
-### Here are the details from a captured packet
+As expected the communication is on the UDP protocol, as it is also stated in the `SoapyRemote` wiki page: `By default SoapyRemote streams are based around udp to preference throughput over reliability`.
+I haven't figured out what the TCP PUSH ACK package was accomplishing since I haven't found a way to confirm eventual speculations.
+
+### Details from a captured packet
 
 ```text
 
@@ -316,3 +321,9 @@ User Datagram Protocol, Src Port: 58586, Dst Port: 37604
 Data (1452 bytes)
 
 ```
+
+### I/O Graph for UDP stream
+
+![Alt text](Images/cattura_progetto_io_graph.jpg "I/O_Graph_UDP")
+
+## Experience
