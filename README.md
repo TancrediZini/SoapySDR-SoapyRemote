@@ -357,6 +357,9 @@ Ttl: 1.89 GByte
 
 ```
 
+Consider that this data is on the whole interface and is not filtered.  
+It was a mean to cross control the Wireshark analysis.
+
 ## Experience
 
 I had problems during the setup due to my inexperience with the Github environment and Linux based systems, which I began to use in the previous DNCS project.  
