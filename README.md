@@ -2,7 +2,7 @@
 
 ## Assignment
 
-Use SoapySDR and it's remote support to pilot from a client an SDR installed on a server.
+Use SoapySDR and it's remote support to pilot from a client an SDR dongle installed on a server.
 Analyze the bandwith used by the connection and its performance.
 
 ```text
