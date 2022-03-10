@@ -37,7 +37,7 @@ Server: `192.168.1.133`
 #### Installing the SDR module
 
 For this project I am using a NooElec NESDR SMArtee v2.  
-Using the `lsusb` command we can see that the OS has recognized the device and had loaded what it believes to be be the correct driver, listing the device as `Realtek Semiconductor Corp. RTL2838 DVB-T`.
+Using the `lsusb` command we can see that the OS has recognized the device and had loaded what it believes to be the correct driver, listing the device as `Realtek Semiconductor Corp. RTL2838 DVB-T`.
 
 ```text
 
@@ -364,5 +364,5 @@ It was a mean to cross control the Wireshark analysis.
 
 I had problems during the setup due to my inexperience with the Github environment and Linux based systems, which I began to use in the previous DNCS project.  
 There a couple of things I would have liked to solve, like the `[ERROR] avahi_entry_group_new() failed` or problems with dongle's antenna that never gave me a clear signal(I couldn't place it outside and there was probably too much noise in my apartment), no matter how or in which room I placed it.  
-I also got to experience Markdown a bit, and the fact that I haven't found a way to make the links open automatically in a new tab anoys me a bit...  
-I hope to have done a sufficient job, but I suspect that there could have been more things I could have looked at.
+I also got to experience Markdown a bit, and the fact that I haven't found a way to make the links open automatically in a new tab anoys me a bit.
+I tried to did the best I could within my possibilities, but I feel that there are deeper analyis that could be done around this environment.
