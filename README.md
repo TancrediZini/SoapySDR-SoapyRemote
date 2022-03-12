@@ -37,7 +37,7 @@ Server: `192.168.1.133`
 #### Installing the SDR module
 
 For this project I am using a NooElec NESDR SMArtee v2.  
-Using the `lsusb` command we can see that the OS has recognized the device and had loaded what it believes to be the correct driver, listing the device as `Realtek Semiconductor Corp. RTL2838 DVB-T`.
+Using `lsusb` we can see that the OS recognized the device and had loaded what it believes to be the correct driver, listing the device as `Realtek Semiconductor Corp. RTL2838 DVB-T`.
 
 ```text
 
@@ -54,19 +54,19 @@ The next step is "blacklisting" the defaults drivers, done by adding the line `b
 
 Finally we can install the rtl-sdr package with the `sudo apt-get install rtl-sdr` command. The device can be tested by calling the `rtl_test` command in the terminal.
 
-This process is valid on Linux based systems, Windows based systems need to follow [this guide](https://support.nooelec.com/hc/en-us/articles/360005298053-NESDR-Installation-Guide).
+For Windows based systems refer to the following [guide](https://support.nooelec.com/hc/en-us/articles/360005298053-NESDR-Installation-Guide).
 
 ## SoapySDR installation
 
-To install SoapySDR on the server and on the client I followed the [Build Guide](https://github.com/pothosware/SoapySDR/wiki/BuildGuide) on the GitHub.
+To install SoapySDR on the server and on the client I followed the [Build Guide](https://github.com/pothosware/SoapySDR/wiki/BuildGuide) from the official GitHub repository.
 
 ## SoapyRTLSDR installation
 
-I followed the [wiki](https://github.com/pothosware/SoapyRTLSDR/wiki) to install this plugin module to interface the RTL-SDR with the SoapySDR API, both on the server and the client.
+To interface RTL-SDR with The SoapySDR APIs I followed this [wiki](https://github.com/pothosware/SoapyRTLSDR/wiki) to install the necessary plug-in both on client and server.
 
 ## SoapyRemote installation
 
-To install SoapyRemote on the server I followed the building instruction on the [Remote support for Soapy SDR](https://github.com/pothosware/SoapyRemote/wiki) page on GitHub.
+To install SoapyRemote on the server I followed the building instruction on the [Remote support for Soapy SDR](https://github.com/pothosware/SoapyRemote/wiki) page on the official GitHub repository.
 
 ### This is the output of the `SoapySDRUtil --info` command on the server
 
@@ -135,7 +135,7 @@ As we can see, the only difference is the remote module, which was only installe
 
 ### Soapy server initialization
 
-To start the Soapy Server and utilize the SDR module remotely it is sufficient to run the `SoapySDRServer --bind` command in the shell environment.
+To start the Soapy Server and utilize the SDR module remotely run the command `SoapySDRServer --bind` in the shell.
 
 ```text
 
@@ -158,7 +158,7 @@ Connecting to DNS-SD daemon...
 ```
 
 I was worried about `[ERROR] avahi_entry_group_new() failed`.  
-I serched many ways to resolve the issue, even if it didn't affect the server-client communication in a detectable(from me, at least...) way, but I couldn't find a solution to it.  
+I serched many ways to resolve the issue, even if it didn't affect the server-client communication in a detectable (from me, at least...) way, but I couldn't find a solution to it.  
 I tried to install the `SoapyRemote` on a `Raspian` system and that error never showed up while binding the server, so I suppose it stems from my lack of knowledge about Linux based systems.
 
 ## Using CubicSDR with the Local Net Device
@@ -335,7 +335,7 @@ I used [nload](https://github.com/rolandriegel/nload), though I installed it via
 
 ![Alt text](Images/bandwith_analysis.jpg "nload_screenshot")
 
-I transcribed the data, since it isn't much readable in the screenshot:
+Here is the transcript for readibility purposes:
 
 ```text
 Incoming:
@@ -363,6 +363,6 @@ It was a mean to cross control the Wireshark analysis.
 ## Experience
 
 I had problems during the setup due to my inexperience with the Github environment and Linux based systems, which I began to use in the previous DNCS project.  
-There a couple of things I would have liked to solve, like the `[ERROR] avahi_entry_group_new() failed` or problems with dongle's antenna that never gave me a clear signal(I couldn't place it outside and there was probably too much noise in my apartment), no matter how or in which room I placed it.  
+There a couple of things I would have liked to solve, like the `[ERROR] avahi_entry_group_new() failed` or problems with dongle's antenna that never gave me a clear signal, no matter how or in which room I place it (I couldn't place it outside and there was probably too much noise in my apartment).  
 I also got to experience Markdown a bit, and the fact that I haven't found a way to make the links open automatically in a new tab anoys me a bit.  
 I tried to did the best I could within my possibilities, but I feel that there are deeper analyis that could be done around this environment.
